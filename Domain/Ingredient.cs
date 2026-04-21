@@ -1,3 +1,5 @@
+using ITCS_3112_Final_Project.Enums;
+
 namespace ITCS_3112_Final_Project.Domain;
 
 /// <summary>

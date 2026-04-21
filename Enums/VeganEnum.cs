@@ -1,4 +1,4 @@
-namespace ITCS_3112_Final_Project.Domain;
+namespace ITCS_3112_Final_Project.Enums;
 
 /// <summary>
 /// Simple dietary classification for an ingredient.
