@@ -1,6 +1,7 @@
 ﻿namespace ITCS_3112_Final_Project.Repositories;
 
 using ITCS_3112_Final_Project.Domain;
+using ITCS_3112_Final_Project.Contracts;
 
 public class UserRepository : IUserRepository
 {
@@ -11,7 +12,7 @@ public class UserRepository : IUserRepository
         
     }
 
-    public User? GetUserById(string id)
+    public User GetUserById(string id)
     {
         foreach (User user in _users)
         {
