@@ -1,6 +1,6 @@
 using ITCS_3112_Final_Project.Domain;
 
-namespace ITCS_3112_Final_Project.Repositories;
+namespace ITCS_3112_Final_Project.Contracts;
 
 /// <summary>
 /// Data access abstraction for user pantries.
