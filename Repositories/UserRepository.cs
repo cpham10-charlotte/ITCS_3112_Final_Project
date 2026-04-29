@@ -26,6 +26,6 @@ public class UserRepository : IUserRepository
 
     public void AddUser(User user)
     {
-        _users.add(user);
+        _users.Add(user);
     }
 }
