@@ -18,7 +18,7 @@ public class RecommendationService : IRecommendationService
 
     public List<Recipe> Recommend(string userId)
     {
-        IPantryService pantryService = new PantryService(_pantryRepo, _ingredientRepo);
+        Contracts.PantryService pantryService = new AddIngredientService(_pantryRepo, _ingredientRepo);
         IReadOnlyList<Ingredient> userPantry = pantryService.ViewPantry(userId);
         List<Recipe> recommendations = [];
 
