@@ -25,11 +25,11 @@ your chosen IDE and press the IDE's run button.
 | Console I/O | Program | 67 - 250 | User Input is needed to login to the service, as well as interact with the pantry and recipes within the service | 
 
 ## 4. Design Patterns
-| Pattern   | Category   | File Name | Line Numbers | Rationale |
-|-----------|------------| --- | --- | --- |
+| Pattern   | Category   | File Name | Line Numbers | Rationale                                                                                                                                       |
+|-----------|------------| --- | --- |-------------------------------------------------------------------------------------------------------------------------------------------------|
 | Singleton | Behavioral | RecipeFileLoader        | ALL          | RecipeFileLoader only needs one instance to provide file loading to all classes within the code                                                 |
 | Factory   | Creational | RecipeCreationService | ALL          | Recipe creation needs to follow a certain template but the actual creation needs to be abstracted since we allow users to add their own recipes |
-
+| Strategy | Behavioral | AddIngredientService | 17 - 32 | Both AddIngredientService and DeleteIngredientService inherit PantryService and can be used in place of PantryService. This allows us to switch between adding and deleting ingredients smoothly during runtime. |
 ## 5. Design Decisions
 
 In our design, we coupled the services and repositories based off of the domain they used. For example, the 
