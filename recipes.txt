@@ -1,5 +1,5 @@
 Id|Name|Vegan|Ingredients
-1|Spaghetti Bolognese|NON_VEGAN|Pasta,Ground Beef,Tomato Sauce,Garlic
-2|Veggie Tacos|VEGAN|Tortilla,Beans,Avocado,Lettuce
-3|Chicken Alfredo|NON_VEGAN|Chicken,Pasta,Cream,Parmesan
-4|Fruit Bowl|VEGAN|Banana,Apple,Blueberries
+1|Spaghetti Bolognese|NON_VEGAN|1:Pasta:VEGAN,2:Ground Beef:NON_VEGAN,3:Tomato Sauce:VEGAN,4:Garlic:VEGAN
+2|Veggie Tacos|VEGAN|5:Tortilla:VEGAN,6:Beans:VEGAN,7:Avocado:VEGAN,8:Lettuce:VEGAN
+3|Chicken Alfredo|NON_VEGAN|9:Chicken:NON_VEGAN,1:Pasta:VEGAN,10:Cream:NON_VEGAN,11:Parmesan:NON_VEGAN
+4|Fruit Bowl|VEGAN|12:Banana:VEGAN,13:Apple:VEGAN,14:Blueberries:VEGAN

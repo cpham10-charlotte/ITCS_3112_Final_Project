@@ -5,7 +5,7 @@ using ITCS_3112_Final_Project.Contracts;
 
 public class UserRepository : IUserRepository
 {
-    private List<User> _users { get; set; }
+    private readonly List<User> _users = new();
 
     public UserRepository()
     {
@@ -16,7 +16,7 @@ public class UserRepository : IUserRepository
     {
         foreach (User user in _users)
         {
-            if (user.Id == id)
+            if (user.id == id)
             {
                 return user;
             }

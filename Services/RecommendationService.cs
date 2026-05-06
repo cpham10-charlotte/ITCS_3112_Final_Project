@@ -18,7 +18,8 @@ public class RecommendationService : IRecommendationService
 
     public List<Recipe> Recommend(string userId)
     {
-        Contracts.PantryService pantryService = new AddIngredientService(_pantryRepo, _ingredientRepo);
+        //PantryService pantryService = new AddIngredientService(_pantryRepo, _ingredientRepo);
+        PantryService pantryService = new AddIngredientService(_pantryRepo, _ingredientRepo);
         IReadOnlyList<Ingredient> userPantry = pantryService.ViewPantry(userId);
         List<Recipe> recommendations = [];
 
@@ -29,7 +30,7 @@ public class RecommendationService : IRecommendationService
             foreach (Ingredient ingredient in recipe.Ingredients)
             {
                 count += 1;
-                if (userPantry.Contains(ingredient))
+                if (userPantry.Any(i => i.Id == ingredient.Id))
                 {
                     matches += 1;
                 }

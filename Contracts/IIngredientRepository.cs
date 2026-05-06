@@ -10,4 +10,5 @@ public interface IIngredientRepository
     IReadOnlyList<Ingredient> GetAll();
 
     Ingredient? GetById(string id);
+    void  Add(Ingredient ingredient);
 }

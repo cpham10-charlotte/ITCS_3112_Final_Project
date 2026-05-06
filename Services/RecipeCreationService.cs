@@ -17,6 +17,16 @@ public class RecipeCreationService : IRecipeCreationService
 
     public Recipe CreateRecipe(User user, string name, string id, VeganEnum vegan, List<Ingredient> ingredients)
     {
+      
+        if (string.IsNullOrWhiteSpace(id) || _recipeRepo.GetById(id) != null)
+        {
+            int maxId = _recipeRepo
+                .GetAll()
+                .Select(r => int.Parse(r.Id))
+                .Max();
+
+            id = (maxId + 1).ToString();
+        }
         Recipe newRecipe = new Recipe(name, id, vegan, ingredients);
         
         _recipeRepo.Add(newRecipe);
