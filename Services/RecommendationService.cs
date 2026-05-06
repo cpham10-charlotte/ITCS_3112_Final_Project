@@ -30,7 +30,7 @@ public class RecommendationService : IRecommendationService
             foreach (Ingredient ingredient in recipe.Ingredients)
             {
                 count += 1;
-                if (userPantry.Contains(ingredient))
+                if (userPantry.Any(i => i.Id == ingredient.Id))
                 {
                     matches += 1;
                 }

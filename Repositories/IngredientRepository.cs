@@ -17,6 +17,11 @@ public sealed class IngredientRepository : IIngredientRepository
 
     public IReadOnlyList<Ingredient> GetAll() => _ingredients.ToList();
 
+    public void Add(Ingredient ingredient)
+    {
+        _ingredients.Add(ingredient);
+    }
+
     public Ingredient? GetById(string id) =>
         string.IsNullOrWhiteSpace(id)
             ? null

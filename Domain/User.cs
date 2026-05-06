@@ -2,15 +2,14 @@
 
 public class User
 {
-    private string _name { get; set; }
-    private string _id { get; set; }
-    public string Id { get { return _id; } }
-    private string _email { get; set; }
+    public string name { get; set; }
+    public string id { get; set; }
+    private string email { get; set; }
     
     public  User(string name, string id, string email)
     {
-        _name = name;
-        _id = id;
-        _email = email;
+        this.name = name;
+        this.id = id;
+        this.email = email;
     }
 }

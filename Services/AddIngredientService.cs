@@ -16,11 +16,18 @@ public class AddIngredientService : PantryService
 
     public override IReadOnlyList<Ingredient> ViewPantry(string userId)
     {
-        throw new NotImplementedException();
+        var pantry = _pantryRepo.GetByUserId(userId);
+        return pantry?.GetIngredients() ?? new List<Ingredient>();
     }
 
     public override void UpdatePantry(string userId, string ingredientId)
     {
-        throw new NotImplementedException();
+        var pantry = _pantryRepo.GetByUserId(userId) ?? new Pantry(userId);
+
+        var ingredient = _ingredientRepo.GetById(ingredientId);
+        if (ingredient == null) return;
+
+        pantry.AddIngredient(ingredient);
+        _pantryRepo.Save(pantry);
     }
 }
