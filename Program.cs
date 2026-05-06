@@ -17,10 +17,13 @@ class Program
         IUserRepository userRepo = new UserRepository();
         
         //load the text files at runtime to populate repositories
+        string basePath = AppContext.BaseDirectory;
+        string userFilePath = Path.Combine(basePath, "Docs", "users.txt");
+        string recipeFilePath = Path.Combine(basePath, "Docs", "recipes.txt");
         IFileLoader userLoader = new UserFileLoader(userRepo);
-        userLoader.Load("/Users/Danielschool/Desktop/ITCS_3112_Final_Project/users.txt"); //change path to whichever yours is for this file
+        userLoader.Load(userFilePath); //change path to whichever yours is for this file
         IFileLoader recipeLoader = new RecipeFileLoader(recipeRepo, ingredientRepo);
-        recipeLoader.Load("/Users/Danielschool/Desktop/ITCS_3112_Final_Project/recipes.txt"); //change path to whichever yours is for this file
+        recipeLoader.Load(recipeFilePath); //change path to whichever yours is for this file
 
         //services
         IAccountService authService = new AuthenticationService(userRepo);
